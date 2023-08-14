@@ -24,10 +24,24 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
+
+    //DB 관련
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    //MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    //mariadb
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.7'
+
+    //롬복
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    //테스트 롬복
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {

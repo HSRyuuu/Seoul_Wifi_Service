@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul_wifi_service.repository.history.HistoryMapper">
+
+    <select id="findById" resultType="History">
+        select *
+        from history
+        where id = #{id}
+    </select>
+
+    <select id="findAll" resultType="History">
+        select * from history
+        order by id desc
+        limit 20;
+    </select>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into history(lat, lnt, search_date_time)
+        values (#{lat}, #{lnt}, #{searchDateTime})
+    </insert>
+
+    <delete id="delete">
+        delete from history
+        where id=#{id}
+    </delete>
+
+</mapper>

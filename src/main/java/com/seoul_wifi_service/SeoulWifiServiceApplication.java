@@ -1,4 +1,4 @@
-package com.example.seoul_wifi_service;
+package com.seoul_wifi_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

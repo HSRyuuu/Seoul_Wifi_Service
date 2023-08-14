@@ -1,4 +1,4 @@
-package com.example.seoul_wifi_service;
+package com.seoul_wifi_service.seoul_wifi_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul_wifi_service.repository.wifi.WifiLoaderMapper">
+
+    <insert id="loadList" parameterType="WifiApiDTO">
+        insert into wifi
+        (manage_number, district, name, addr1, addr2, install_floor, install_type, install_corp, service_type, network_type, install_year, in_or_out_door, wifi_access_env ,lat ,lnt ,work_date_time )
+        values
+        <foreach collection="list" index="index" item="WifiApiDTO" separator=",">
+            (
+                #{X_SWIFI_MGR_NO},
+                #{X_SWIFI_WRDOFC},
+                #{X_SWIFI_MAIN_NM},
+                #{X_SWIFI_ADRES1},
+                #{X_SWIFI_ADRES2},
+                #{X_SWIFI_INSTL_FLOOR},
+                #{X_SWIFI_INSTL_TY},
+                #{X_SWIFI_INSTL_MBY},
+                #{X_SWIFI_SVC_SE},
+                #{X_SWIFI_CMCWR},
+                #{X_SWIFI_CNSTC_YEAR},
+                #{X_SWIFI_INOUT_DOOR},
+                #{X_SWIFI_REMARS3},
+                #{LAT},
+                #{LNT},
+                #{WORK_DTTM}
+            )
+        </foreach>
+    </insert>
+
+</mapper>

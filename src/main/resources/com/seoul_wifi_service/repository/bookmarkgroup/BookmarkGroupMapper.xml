@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul_wifi_service.repository.bookmarkgroup.BookmarkGroupMapper">
+
+
+    <select id="findById" resultType="BookmarkGroup">
+        select *
+        from BookmarkGroup
+        where id = #{id}
+    </select>
+
+    <select id="findAll" resultType="BookmarkGroup">
+        select *
+        from BookmarkGroup
+        order by priority
+        limit 20
+    </select>
+
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into BookmarkGroup (name, priority, create_date_time)
+        values(#{name}, #{priority}, #{createDateTime})
+    </insert>
+
+    <update id="edit">
+        update BookmarkGroup
+        set name=#{bookmarkGroup.name}, priority=#{bookmarkGroup.priority}, edit_date_time=#{bookmarkGroup.editDateTime}
+        where id=#{beforeId};
+    </update>
+
+    <delete id="delete">
+        DELETE FROM BookmarkGroup
+        WHERE id=#{id}
+    </delete>
+
+
+</mapper>
