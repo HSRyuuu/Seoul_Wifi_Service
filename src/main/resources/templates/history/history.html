@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table_small.css}" href="../../static/css/table_small.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}" href="../../static/css/buttons.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+
+    <script th:src="@{/js/confirm.js}" src="../../static/js/confirm.js"></script>
+
+    <title>위치 히스토리 목록</title>
+</head>
+
+<body>
+<h1>위치 히스토리 목록</h1>
+<div class="button-container">
+    <button class="button"
+            onclick="location.href='list.html'"
+            th:onclick="|location.href='@{/list}'|"
+    >Home
+    </button>
+
+    <button class="button"
+            onclick="location.href='history.html'"
+            th:onclick="|location.href='@{/history}'|"
+    >위치 히스토리 목록
+    </button>
+
+    <button class="button"
+            style="background-color: #f5c2c7"
+            onclick="location.href='../wifi/load-wifi-waiting.html'"
+    >Open API 와이파이 정보 가져오기
+    </button>
+
+    <button class="button"
+            onclick="location.href='../bookmark/bookmark-list.jsp'"
+    >북마크 보기
+    </button>
+
+    <button class="button"
+            onclick="location.href='../bookmark-group/bookmark-group.jsp'"
+    >북마크 그룹 관리
+    </button>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>위도(LAT)</th>
+        <th>경도(LNT)</th>
+        <th>조회일자</th>
+        <th colspan="2">비고</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="history : ${historyList}">
+        <td th:text="${history.id}"></td>
+        <td th:text="${history.lat}"></td>
+        <td th:text="${history.lnt}"></td>
+        <td th:text="${history.searchDateTime}"></td>
+        <td>
+            <button class="button"
+                    th:onclick="|location.href='@{/list(lat=${history.lat}, lnt=${history.lnt})}'|"
+                    style="background-color: lightblue"
+            >조회
+            </button>
+        </td>
+        <td>
+            <form th:action="@{/history/delete(__${'id=' + history.id}__)}"
+                  onsubmit="return confirmDelete('삭제하시겠습니까?')" method="post">
+                <button type="submit" class="button" style="background-color: #f5c2c7">
+                    삭제
+                </button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

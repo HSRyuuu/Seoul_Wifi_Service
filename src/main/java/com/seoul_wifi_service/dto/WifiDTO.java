@@ -1,9 +1,13 @@
 package com.seoul_wifi_service.dto;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class WifiDTO {
     private double distance; // 거리
     private String manageNumber;//관리 번호
@@ -23,12 +27,4 @@ public class WifiDTO {
     private String lnt;//경도
     private String workDateTime;//작업일자
 
-    public WifiDTO() {
-    }
-//    public void setDistance(double distance){
-//        this.distance = String.format("%.4f", distance);
-//    }
-//    public void setDistance(String distance) {
-//        this.distance = String.format("%.4f", distance);
-//    }
 }

@@ -38,13 +38,14 @@
                 install_floor, install_type, install_corp, service_type
                 network_type, install_year, in_or_out_door, wifi_access_env,
                 lat, lnt, work_date_time,
+                round(
                 (6371 *
                     acos(cos(radians(#{lat}))
                              *cos(radians(lat))
                              *cos(radians(lnt)- radians(#{lnt}))
                              + sin(radians(#{lat}))*sin(radians(lat))
                         )
-                ) as distance
+                ), 4) as distance
                 from wifi
                 order by distance
                 limit 20
@@ -55,13 +56,14 @@
                install_floor, install_type, install_corp, service_type
                         network_type, install_year, in_or_out_door, wifi_access_env,
                lat, lnt, work_date_time,
+               round(
                (6371 *
                 acos(cos(radians(#{loc.lat}))
                          *cos(radians(lat))
                          *cos(radians(lnt)- radians(#{loc.lnt}))
                     + sin(radians(#{loc.lat}))*sin(radians(lat))
                     )
-                   ) as distance
+                   ),4) as distance
                 from wifi
                 where manage_number= #{manageNumber}
     </select>

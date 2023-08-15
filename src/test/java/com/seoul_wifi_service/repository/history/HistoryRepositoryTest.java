@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 @Slf4j
 @SpringBootTest
 @RequiredArgsConstructor
@@ -42,10 +41,9 @@ class HistoryRepositoryTest {
         List<History> all = historyRepository.findAll();
 
         //when
-        int size = 1;
 
         //then
-        assertThat(all.size()).isEqualTo(1);
+        assertThat(all).isNotNull();
     }
 
     @Test

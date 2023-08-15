@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table_main.css}" href="../static/css/table_main.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}" href="../static/css/buttons.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+
+    <script th:src="@{/js/location.js}" src="../static/js/location.js"></script>
+    <title>Wifi Home</title>
+</head>
+<body>
+<h1>와이파이 정보</h1>
+
+<div class="button-container">
+    <button class="button"
+            onclick="location.href='list.html'"
+            th:onclick="|location.href='@{/list}'|"
+    >Home</button>
+
+    <button class="button"
+            onclick="location.href='history.html'"
+            th:onclick="|location.href='@{/history}'|"
+    >위치 히스토리 목록</button>
+
+    <button class="button"
+            style="background-color: #f5c2c7"
+            onclick="location.href='wifi/load-wifi-waiting.html'"
+    >Open API 와이파이 정보 가져오기</button>
+
+    <button class="button"
+            onclick="location.href='bookmark/bookmark-list.jsp'"
+    >북마크 보기</button>
+
+    <button class="button"
+            onclick="location.href='bookmark-group/bookmark-group.jsp'"
+    >북마크 그룹 관리
+    </button>
+</div>
+
+<div>
+    <form method="post" th:action="@{/list}" th:object="${loc}" action="list.html">
+        <label for="lat"></label>
+        LAT: <input type="text" id="lat" th:field="*{lat}" />
+        <label for="lnt"></label>
+        LNT: <input type="text" id="lnt" th:field="*{lnt}"/>
+
+        <button type="button" class="button" onclick="getLocation()">
+            내 위치 불러오기
+        </button>
+
+        <button type="submit" class="button" style="background-color: lightblue">
+            근처 WIFI 정보 보기
+        </button>
+    </form>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>거리(km)</th>
+        <th>관리번호</th>
+        <th>자치구</th>
+        <th>와이파이명</th>
+        <th>도로명주소</th>
+        <th>상세주소</th>
+        <th>설치위치(층)</th>
+        <th>설치유형</th>
+        <th>설치기관</th>
+        <th>서비스구분</th>
+        <th>망종류</th>
+        <th>설치년도</th>
+        <th>실내외구분</th>
+        <th>WIFI접속환경</th>
+        <th>위도(LAT)</th>
+        <th>경도(LNT)</th>
+        <th>작업일자</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="wifi : ${wifiList}">
+        <td th:text="${wifi.distance}">0.0000</td>
+        <td th:text="${wifi.manageNumber}">12345</td>
+        <td th:text="${wifi.district}">강동구</td>
+        <td>
+            <a th:text="${wifi.name}" th:href="@{/detail/{key}(key=${wifi.manageNumber})}" ></a>
+        </td>
+        <td th:text="${wifi.addr1}"></td>
+        <td th:text="${wifi.addr2}"></td>
+        <td th:text="${wifi.installFloor}"></td>
+        <td th:text="${wifi.installType}"></td>
+        <td th:text="${wifi.installCorp}"></td>
+        <td th:text="${wifi.serviceType}"></td>
+        <td th:text="${wifi.networkType}"></td>
+        <td th:text="${wifi.installYear}"></td>
+        <td th:text="${wifi.inOrOutDoor}"></td>
+        <td th:text="${wifi.wifiAccessEnv}"></td>
+        <td th:text="${wifi.lat}"></td>
+        <td th:text="${wifi.lnt}"></td>
+        <td th:text="${wifi.workDateTime}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
