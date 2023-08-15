@@ -1,7 +1,7 @@
 package com.seoul_wifi_service.api;
 
 
-import com.seoul_wifi_service.json_utils.JsonConverter;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import java.net.URLEncoder;
 import static com.seoul_wifi_service.api.ApiConst.*;
 
 
+@Component
 public class ApiExplorer {
     static JsonConverter jsonConverter = new JsonConverter();
 

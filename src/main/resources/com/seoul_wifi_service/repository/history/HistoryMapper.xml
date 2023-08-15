@@ -11,7 +11,8 @@
 
     <select id="findAll" resultType="History">
         select * from history
-        order by id desc
+        order by id
+        desc
         limit 20;
     </select>
 

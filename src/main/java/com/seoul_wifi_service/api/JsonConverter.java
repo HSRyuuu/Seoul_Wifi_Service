@@ -1,12 +1,14 @@
-package com.seoul_wifi_service.json_utils;
+package com.seoul_wifi_service.api;
 
 import com.seoul_wifi_service.dto.WifiApiDTO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.springframework.stereotype.Component;
 
 
+@Component
 public class JsonConverter {
     /**
      * json String을 받아서 WifiInfo 배열로 변환

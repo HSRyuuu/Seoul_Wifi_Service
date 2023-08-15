@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seoul_wifi_service.repository.wifi.WifiMapper">
+
+    <insert id="load" parameterType="com.seoul_wifi_service.dto.WifiApiDTO">
+        insert into wifi
+        (manage_number, district, name, addr1, addr2, install_floor, install_type, install_corp, service_type, network_type, install_year, in_or_out_door, wifi_access_env ,lat ,lnt ,work_date_time )
+        values
+        <foreach collection="array" index="index" item="wifiApiDTO" separator=",">
+            (
+                #{wifiApiDTO.X_SWIFI_MGR_NO},
+                #{wifiApiDTO.X_SWIFI_WRDOFC},
+                #{wifiApiDTO.X_SWIFI_MAIN_NM},
+                #{wifiApiDTO.X_SWIFI_ADRES1},
+                #{wifiApiDTO.X_SWIFI_ADRES2},
+                #{wifiApiDTO.X_SWIFI_INSTL_FLOOR},
+                #{wifiApiDTO.X_SWIFI_INSTL_TY},
+                #{wifiApiDTO.X_SWIFI_INSTL_MBY},
+                #{wifiApiDTO.X_SWIFI_SVC_SE},
+                #{wifiApiDTO.X_SWIFI_CMCWR},
+                #{wifiApiDTO.X_SWIFI_CNSTC_YEAR},
+                #{wifiApiDTO.X_SWIFI_INOUT_DOOR},
+                #{wifiApiDTO.X_SWIFI_REMARS3},
+                #{wifiApiDTO.LNT},
+                #{wifiApiDTO.LAT},
+                #{wifiApiDTO.WORK_DTTM}
+            )
+        </foreach>
+    </insert>
+
+    <delete id="deleteAll">
+        delete from wifi
+    </delete>
+
+    <select id="selectTop20Wifi" resultType="WifiDTO">
+        SELECT manage_number, district, name, addr1, addr2,
+                install_floor, install_type, install_corp, service_type
+                network_type, install_year, in_or_out_door, wifi_access_env,
+                lat, lnt, work_date_time,
+                (6371 *
+                    acos(cos(radians(#{lat}))
+                             *cos(radians(lat))
+                             *cos(radians(lnt)- radians(#{lnt}))
+                             + sin(radians(#{lat}))*sin(radians(lat))
+                        )
+                ) as distance
+                from wifi
+                order by distance
+                limit 20
+    </select>
+    
+    <select id="findByManageNumber" resultType="WifiDTO">
+        SELECT manage_number, district, name, addr1, addr2,
+               install_floor, install_type, install_corp, service_type
+                        network_type, install_year, in_or_out_door, wifi_access_env,
+               lat, lnt, work_date_time,
+               (6371 *
+                acos(cos(radians(#{loc.lat}))
+                         *cos(radians(lat))
+                         *cos(radians(lnt)- radians(#{loc.lnt}))
+                    + sin(radians(#{loc.lat}))*sin(radians(lat))
+                    )
+                   ) as distance
+                from wifi
+                where manage_number= #{manageNumber}
+    </select>
+
+</mapper>

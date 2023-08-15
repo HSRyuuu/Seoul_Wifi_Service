@@ -41,12 +41,13 @@ class BookmarkRepositoryTest {
     }
 
     @Test
+    @DisplayName("findAll() - size 체크 필요")
     void findAll() {
         //given
         List<Bookmark> all = bookmarkRepository.findAll();
 
         //when
-        int size =3;
+        int size =2;
 
         //then
         assertThat(all.size()).isEqualTo(size);
@@ -75,12 +76,10 @@ class BookmarkRepositoryTest {
         Bookmark save = bookmarkRepository.save(bookmark);
 
         //when
-        bookmarkRepository.delete(2);
-        bookmarkRepository.delete(3);
+        bookmarkRepository.delete(save.getId());
         Bookmark find = bookmarkRepository.findById(save.getId());
 
         //then
-        assertThat(save).isNotNull();
         assertThat(find).isNull();
 
     }

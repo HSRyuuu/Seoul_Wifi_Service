@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class WifiDTO {
-    private String distance; // 거리
+    private double distance; // 거리
     private String manageNumber;//관리 번호
     private String district; //자치구
     private String name;//와이파이명
@@ -25,10 +25,10 @@ public class WifiDTO {
 
     public WifiDTO() {
     }
-    public void setDistance(double distance){
-        this.distance = String.format("%.4f", distance);
-    }
-    public void setDistance(String distance){
-        this.distance = String.format("%.4f", distance);
-    }
+//    public void setDistance(double distance){
+//        this.distance = String.format("%.4f", distance);
+//    }
+//    public void setDistance(String distance) {
+//        this.distance = String.format("%.4f", distance);
+//    }
 }

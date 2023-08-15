@@ -1,7 +1,6 @@
 package com.seoul_wifi_service.api;
 
 import com.seoul_wifi_service.dto.WifiApiDTO;
-import com.seoul_wifi_service.json_utils.JsonConverter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
