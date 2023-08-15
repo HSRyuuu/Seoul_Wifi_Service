@@ -10,7 +10,7 @@ public class BookmarkGroupDTO {
     public BookmarkGroupDTO() {
     }
 
-    public BookmarkGroupDTO(String name, int priority, String createDateTime) {
+    public BookmarkGroupDTO(String name, int priority) {
         this.name = name;
         this.priority = priority;
     }

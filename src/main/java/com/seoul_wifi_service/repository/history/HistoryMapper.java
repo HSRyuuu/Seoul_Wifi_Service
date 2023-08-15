@@ -1,7 +1,6 @@
 package com.seoul_wifi_service.repository.history;
 
 import com.seoul_wifi_service.domain.History;
-import com.seoul_wifi_service.dto.LocationDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

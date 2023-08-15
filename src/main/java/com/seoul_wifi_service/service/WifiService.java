@@ -1,14 +1,17 @@
 package com.seoul_wifi_service.service;
 
 import com.seoul_wifi_service.api.ApiExplorer;
+import com.seoul_wifi_service.dto.LocationDTO;
 import com.seoul_wifi_service.dto.WifiApiDTO;
 import com.seoul_wifi_service.api.JsonConverter;
+import com.seoul_wifi_service.dto.WifiDTO;
 import com.seoul_wifi_service.repository.wifi.WifiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -47,5 +50,16 @@ public class WifiService {
     }
 
 
+    public List<WifiDTO> selectTop20Wifi(LocationDTO loc){
+        return wifiRepository.selectTop20Wifi(loc);
+    }
+
+    public WifiDTO findByManageNumberWithLocation(String manageNumber, LocationDTO loc) {
+        return wifiRepository.findByManageNumber(manageNumber, loc);
+    }
+
+    public WifiDTO findByManageNumber(String manageNumber) {
+        return wifiRepository.findByManageNumber(manageNumber, new LocationDTO(0.0, 0.0));
+    }
 
 }

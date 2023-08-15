@@ -1,6 +1,6 @@
 package com.seoul_wifi_service.domain;
 
-import com.seoul_wifi_service.service.DateTimeFormatService;
+import com.seoul_wifi_service.service.MyDateTimeFormatter;
 import lombok.*;
 
 @Getter
@@ -19,6 +19,6 @@ public class History {
     public History(double lat, double lnt) {
         this.lat = lat;
         this.lnt = lnt;
-        this.searchDateTime = new DateTimeFormatService().getDateTimeNow();
+        this.searchDateTime = MyDateTimeFormatter.getDateTimeNow();
     }
 }
