@@ -1,4 +1,4 @@
-# WifiService
+# Seoul_Wifi_Service
 (23.08.13 ~ 23.08.16)
 
 ## skills
