@@ -3,7 +3,7 @@
 
 ## skills
 - Java 11, Spring boot 2.7.10, gradle
-- Thymeleaf, (HTML5, CSS3, javascript)
+- Thymeleaf, (HTML, CSS, javascript)
 - MariaDB
 - MyBatis
 - JUnit 5
