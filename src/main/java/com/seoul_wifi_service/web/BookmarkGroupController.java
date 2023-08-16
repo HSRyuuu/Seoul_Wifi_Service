@@ -47,10 +47,8 @@ public class BookmarkGroupController {
 
     @PostMapping("/bookmark-group/edit/{id}")
     public String editBookmarkGroup(@PathVariable long id,
-                                    @ModelAttribute("bookmarkGroup") BookmarkGroupDTO bookmarkGroupDTO,
-                                    Model model){
+                                    @ModelAttribute("bookmarkGroup") BookmarkGroupDTO bookmarkGroupDTO){
         bookmarkGroupService.edit(id, bookmarkGroupDTO);
-
         return "redirect:/bookmark-group";
     }
 

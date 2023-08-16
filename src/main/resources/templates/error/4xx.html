@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>404 Error - Page Not Found</title>
+    <style>
+        /* 오류 페이지 스타일링 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Error !!!</h1>
+    <h2>404 Page Not Found. 페이지를 찾을 수 없습니다.</h2>
+    <p>Sorry, the page you are looking for could not be found.</p>
+    <p>Please check the URL or use the navigation menu to find what you are looking for.</p>
+    <a href="list.html"  th:href="@{/list}"  style="text-decoration: underline">
+        메인으로 이동하기
+    </a>
+</div>
+</body>
+</html>

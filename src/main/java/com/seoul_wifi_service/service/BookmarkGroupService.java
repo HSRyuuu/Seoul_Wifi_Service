@@ -31,12 +31,12 @@ public class BookmarkGroupService {
     }
 
     public void edit(long id, BookmarkGroupDTO bookmarkGroupDTO) {
+        String before = bookmarkGroupRepository.findById(id).getName();
+
         BookmarkGroup bookmarkGroup = new BookmarkGroup(bookmarkGroupDTO.getName(), bookmarkGroupDTO.getPriority());
         bookmarkGroup.setEditDateTime(MyDateTimeFormatter.getDateTimeNow());
-
         bookmarkGroupRepository.edit(id, bookmarkGroup);
 
-        String before = bookmarkGroupRepository.findById(id).getName();
         bookmarkRepository.updateBookmarkGroupName(before, bookmarkGroupDTO.getName());
     }
 
