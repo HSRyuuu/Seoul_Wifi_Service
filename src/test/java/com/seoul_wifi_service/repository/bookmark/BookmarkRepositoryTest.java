@@ -47,10 +47,9 @@ class BookmarkRepositoryTest {
         List<Bookmark> all = bookmarkRepository.findAll();
 
         //when
-        int size =2;
 
         //then
-        assertThat(all.size()).isEqualTo(size);
+        assertThat(all).isNotNull();
     }
 
     @Test

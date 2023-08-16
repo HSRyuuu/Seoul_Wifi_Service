@@ -50,7 +50,6 @@ public class WifiController {
     public String list(@ModelAttribute LocationDTO loc,
                        HttpServletRequest request,
                        RedirectAttributes redirectAttributes) {
-        log.info("session saved lat:{} , lnt:{}", loc.getLat(), loc.getLnt());
         historyService.save(loc);
 
         //위치 세션

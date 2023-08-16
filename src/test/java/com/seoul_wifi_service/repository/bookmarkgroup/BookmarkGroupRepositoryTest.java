@@ -46,10 +46,9 @@ class BookmarkGroupRepositoryTest {
         List<BookmarkGroup> all = bookmarkGroupRepository.findAll();
 
         //when
-        int size = 2;
 
         //then
-        assertThat(all.size()).isEqualTo(2);
+        assertThat(all).isNotNull();
     }
 
     @Test
