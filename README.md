@@ -3,9 +3,10 @@
 
 ## skills
 - Java 11, Spring boot 2.7.10, gradle
-- Thymeleaf
+- Thymeleaf, (HTML5, CSS3, javascript)
 - MariaDB
 - MyBatis
+- JUnit 5
 - Lombok, gson(json 파싱)
 - IntelliJ idea
 
