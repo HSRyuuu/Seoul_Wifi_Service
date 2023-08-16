@@ -89,6 +89,4 @@ public class WifiController {
         session.setAttribute(SessionConst.LOCATION, loc);
         log.info("session saved lat:{} , lnt:{}", loc.getLat(), loc.getLnt());
     }
-
-
 }

@@ -18,29 +18,29 @@
 
 <div class="button-container">
     <button class="button"
-            onclick="location.href='../list.html'"
+            onclick="location.href='list.html'"
             th:onclick="|location.href='@{/list}'|"
-    >Home
-    </button>
+    >Home</button>
 
     <button class="button"
-            onclick="location.href='../history/history.jsp'"
-    >위치 히스토리 목록
-    </button>
+            onclick="location.href='history.html'"
+            th:onclick="|location.href='@{/history}'|"
+    >위치 히스토리 목록</button>
 
     <button class="button"
             style="background-color: #f5c2c7"
-            onclick="location.href='load-wifi-waiting.html'"
-    >Open API 와이파이 정보 가져오기
-    </button>
+            onclick="location.href='wifi/load-wifi-waiting.html'"
+            th:onclick="|location.href='@{/load/waiting}'|"
+    >Open API 와이파이 정보 가져오기</button>
 
     <button class="button"
-            onclick="location.href='../bookmark/bookmark-list.jsp'"
-    >북마크 보기
-    </button>
+            onclick="location.href='bookmark/bookmark-list.jsp'"
+            th:onclick="|location.href='@{/bookmark}'|"
+    >북마크 보기</button>
 
     <button class="button"
-            onclick="location.href='../bookmark-group/bookmark-group.jsp'"
+            onclick="location.href='bookmark-group/bookmark-group.jsp'"
+            th:onclick="|location.href='@{/bookmark-group}'|"
     >북마크 그룹 관리
     </button>
 </div>

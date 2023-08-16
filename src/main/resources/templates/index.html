@@ -20,24 +20,28 @@
     >Home</button>
 
     <button class="button"
-            onclick="location.href='history/history.jsp'"
+            onclick="location.href='history.html'"
             th:onclick="|location.href='@{/history}'|"
     >위치 히스토리 목록</button>
 
     <button class="button"
             style="background-color: #f5c2c7"
             onclick="location.href='wifi/load-wifi-waiting.html'"
+            th:onclick="|location.href='@{/load/waiting}'|"
     >Open API 와이파이 정보 가져오기</button>
 
     <button class="button"
             onclick="location.href='bookmark/bookmark-list.jsp'"
+            th:onclick="|location.href='@{/bookmark}'|"
     >북마크 보기</button>
 
     <button class="button"
             onclick="location.href='bookmark-group/bookmark-group.jsp'"
+            th:onclick="|location.href='@{/bookmark-group}'|"
     >북마크 그룹 관리
     </button>
 </div>
+
 <div>
     <form method="post" th:action="@{/list}" th:object="${loc}" action="list.html">
         <label for="lat"></label>

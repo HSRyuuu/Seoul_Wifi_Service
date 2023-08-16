@@ -3,5 +3,6 @@ function confirmDelete(url) {
     if (result) {
         location.href = url;
     } else {
+        location.href="/bookmark-group";
     }
 }
