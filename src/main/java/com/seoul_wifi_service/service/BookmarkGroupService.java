@@ -34,7 +34,7 @@ public class BookmarkGroupService {
         String before = bookmarkGroupRepository.findById(id).getName();
 
         BookmarkGroup bookmarkGroup = new BookmarkGroup(bookmarkGroupDTO.getName(), bookmarkGroupDTO.getPriority());
-        bookmarkGroup.setEditDateTime(MyDateTimeFormatter.getDateTimeNow());
+        bookmarkGroup.setEditDateTime(MyDateTimeUtil.getDateTimeNow());
         bookmarkGroupRepository.edit(id, bookmarkGroup);
 
         bookmarkRepository.updateBookmarkGroupName(before, bookmarkGroupDTO.getName());

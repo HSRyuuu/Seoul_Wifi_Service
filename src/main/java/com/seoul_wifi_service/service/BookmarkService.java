@@ -28,7 +28,7 @@ public class BookmarkService {
         bookmark.setBookmarkGroupName(bookmarkGroupName);
         bookmark.setWifiManageNumber(key);
         bookmark.setWifiName(wifiDTO.getName());
-        bookmark.setDateTime(MyDateTimeFormatter.getDateTimeNow());
+        bookmark.setDateTime(MyDateTimeUtil.getDateTimeNow());
         return bookmarkRepository.save(bookmark);
     }
 

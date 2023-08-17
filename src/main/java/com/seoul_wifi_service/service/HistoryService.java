@@ -22,7 +22,7 @@ public class HistoryService {
 
     public History save(LocationDTO loc) {
         History history = new History(loc.getLat(), loc.getLnt());
-        history.setSearchDateTime(MyDateTimeFormatter.getDateTimeNow());
+        history.setSearchDateTime(MyDateTimeUtil.getDateTimeNow());
         return historyRepository.save(history);
     }
 

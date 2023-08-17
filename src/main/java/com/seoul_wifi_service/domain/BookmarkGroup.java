@@ -1,6 +1,6 @@
 package com.seoul_wifi_service.domain;
 
-import com.seoul_wifi_service.service.MyDateTimeFormatter;
+import com.seoul_wifi_service.service.MyDateTimeUtil;
 import lombok.*;
 
 @Getter
@@ -19,6 +19,6 @@ public class BookmarkGroup {
     public BookmarkGroup(String name, int priority) {
         this.name = name;
         this.priority = priority;
-        this.createDateTime = MyDateTimeFormatter.getDateTimeNow();
+        this.createDateTime = MyDateTimeUtil.getDateTimeNow();
     }
 }
