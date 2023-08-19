@@ -1,6 +1,10 @@
 # Seoul_Wifi_Service
 (23.08.13 ~ 23.08.16)
 
+(JSP 기반의 `public_wifi_service` 프로젝트를 스프링으로 전환해봄.)
+
+https://github.com/HSRyuuu/public_wifi_service
+
 ## skills
 - Java 11, Spring boot 2.7.10, gradle
 - Thymeleaf, (HTML, CSS, javascript)
