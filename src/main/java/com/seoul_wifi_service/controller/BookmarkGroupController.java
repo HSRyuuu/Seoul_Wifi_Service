@@ -1,4 +1,4 @@
-package com.seoul_wifi_service.web;
+package com.seoul_wifi_service.controller;
 
 import com.seoul_wifi_service.domain.BookmarkGroup;
 import com.seoul_wifi_service.dto.BookmarkGroupDTO;

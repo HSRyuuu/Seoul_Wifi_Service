@@ -7,6 +7,6 @@ import java.time.LocalDateTime;
 @UtilityClass
 public class MyDateTimeUtil {
     public static String getDateTimeNow() {
-        return LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString();
+        return LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
     }
 }

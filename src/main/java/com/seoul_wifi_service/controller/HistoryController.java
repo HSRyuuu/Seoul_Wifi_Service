@@ -1,4 +1,4 @@
-package com.seoul_wifi_service.web;
+package com.seoul_wifi_service.controller;
 
 import com.seoul_wifi_service.domain.History;
 import com.seoul_wifi_service.service.HistoryService;
