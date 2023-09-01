@@ -18,10 +18,13 @@ import java.util.List;
 public class HistoryController {
 
     private final HistoryService historyService;
+
     @GetMapping("/history")
     public String history(Model model){
         List<History> historyList = historyService.findAll();
+
         model.addAttribute("historyList", historyList);
+
         return "history/history";
     }
 

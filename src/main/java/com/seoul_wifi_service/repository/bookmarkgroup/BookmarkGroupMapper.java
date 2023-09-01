@@ -1,7 +1,6 @@
 package com.seoul_wifi_service.repository.bookmarkgroup;
 
 import com.seoul_wifi_service.domain.BookmarkGroup;
-import com.seoul_wifi_service.dto.BookmarkGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -25,7 +25,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    //DB 관련
+    //JDBC
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     //MyBatis
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'

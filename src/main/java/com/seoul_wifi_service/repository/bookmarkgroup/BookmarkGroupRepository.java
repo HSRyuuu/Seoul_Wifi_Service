@@ -10,11 +10,13 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class BookmarkGroupRepository {
+
     private final BookmarkGroupMapper bookmarkGroupMapper;
 
     public BookmarkGroup findById(long id){
         return bookmarkGroupMapper.findById(id);
     }
+
     public List<BookmarkGroup> findAll(){
         return bookmarkGroupMapper.findAll();
     }
@@ -23,6 +25,7 @@ public class BookmarkGroupRepository {
         bookmarkGroupMapper.save(bookmarkGroup);
         return bookmarkGroup;
     }
+
     public void edit(long id, BookmarkGroup bookmarkGroup){
         bookmarkGroupMapper.edit(id, bookmarkGroup);
     }
