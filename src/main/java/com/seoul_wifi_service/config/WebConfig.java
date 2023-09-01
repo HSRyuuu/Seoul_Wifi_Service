@@ -14,6 +14,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .order(1)
                 .addPathPatterns("/**") //  "/"하위에 전부 적용
                 .excludePathPatterns("/css/**","/*.ico","/error");
-
     }
 }

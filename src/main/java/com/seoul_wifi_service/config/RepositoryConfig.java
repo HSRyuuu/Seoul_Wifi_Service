@@ -1,5 +1,6 @@
 package com.seoul_wifi_service.config;
 
+import com.seoul_wifi_service.api.ApiConst;
 import com.seoul_wifi_service.repository.bookmark.BookmarkMapper;
 import com.seoul_wifi_service.repository.bookmark.BookmarkRepository;
 import com.seoul_wifi_service.repository.bookmarkgroup.BookmarkGroupMapper;
@@ -38,4 +39,5 @@ public class RepositoryConfig {
     public WifiRepository wifiLoader(){
         return new WifiRepository(wifiMapper);
     }
+
 }
