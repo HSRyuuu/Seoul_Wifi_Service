@@ -4,8 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-**/main/resources/application.properties
+**/main/resources/application_private.properties
 
 ### STS ###
 .apt_generated
